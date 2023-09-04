@@ -1,0 +1,1139 @@
+{
+	"info": {
+		"_postman_id": "303ad626-d1d9-4181-9af4-03190780541b",
+		"name": "Create Post",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29363154"
+	},
+	"item": [
+		{
+			"name": "CreatePost",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "new image",
+							"type": "file",
+							"src": "/C:/Users/Lenovo/Desktop/картинки/2e0f8f11c5550bd696bc7ac07104bbea.jpeg"
+						},
+						{
+							"key": "title",
+							"value": "Тестирование",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "Очень сложная программа",
+							"type": "text"
+						},
+						{
+							"key": "content",
+							"value": "Надеюсь я справлюсь",
+							"type": "text"
+						},
+						{
+							"key": "isDraft",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "delayPublishTo",
+							"value": "2023-09-07",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://test-stand.gb.ru/gateway/posts",
+					"protocol": "https",
+					"host": [
+						"test-stand",
+						"gb",
+						"ru"
+					],
+					"path": [
+						"gateway",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreatePostEmpty",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "new image",
+							"type": "file",
+							"src": []
+						},
+						{
+							"key": "title",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "content",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "isDraft",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "delayPublishTo",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://test-stand.gb.ru/gateway/posts",
+					"protocol": "https",
+					"host": [
+						"test-stand",
+						"gb",
+						"ru"
+					],
+					"path": [
+						"gateway",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Autorisation",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json();\r",
+							"pm.collectionVariables.set(\"token\", jsonData.token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "igorr",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "7631065bc8",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://test-stand.gb.ru/gateway/login",
+					"protocol": "https",
+					"host": [
+						"test-stand",
+						"gb",
+						"ru"
+					],
+					"path": [
+						"gateway",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateOnlyTitle",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "new image",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "title",
+							"value": "Тестирование",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "content",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "isDraft",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "delayPublishTo",
+							"value": "2023-09-07",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://test-stand.gb.ru/gateway/posts",
+					"protocol": "https",
+					"host": [
+						"test-stand",
+						"gb",
+						"ru"
+					],
+					"path": [
+						"gateway",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateOnlyDescription",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "new image",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "title",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "Очень сложная программа",
+							"type": "text"
+						},
+						{
+							"key": "content",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "isDraft",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "delayPublishTo",
+							"value": "2023-09-07",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://test-stand.gb.ru/gateway/posts",
+					"protocol": "https",
+					"host": [
+						"test-stand",
+						"gb",
+						"ru"
+					],
+					"path": [
+						"gateway",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateOnlyContent",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "new image",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "title",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "content",
+							"value": "Надеюсь я справлюсь",
+							"type": "text"
+						},
+						{
+							"key": "isDraft",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "delayPublishTo",
+							"value": "2023-09-07",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://test-stand.gb.ru/gateway/posts",
+					"protocol": "https",
+					"host": [
+						"test-stand",
+						"gb",
+						"ru"
+					],
+					"path": [
+						"gateway",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MaxTitle",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "new image",
+							"type": "file",
+							"src": "/C:/Users/Lenovo/Desktop/картинки/2e0f8f11c5550bd696bc7ac07104bbea.jpeg"
+						},
+						{
+							"key": "title",
+							"value": "Тестирование3456789012345678901234567890",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "Очень сложная программа",
+							"type": "text"
+						},
+						{
+							"key": "content",
+							"value": "Надеюсь я справлюсь",
+							"type": "text"
+						},
+						{
+							"key": "isDraft",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "delayPublishTo",
+							"value": "2023-09-07",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://test-stand.gb.ru/gateway/posts",
+					"protocol": "https",
+					"host": [
+						"test-stand",
+						"gb",
+						"ru"
+					],
+					"path": [
+						"gateway",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MaxDescription",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "new image",
+							"type": "file",
+							"src": "/C:/Users/Lenovo/Desktop/картинки/2e0f8f11c5550bd696bc7ac07104bbea.jpeg"
+						},
+						{
+							"key": "title",
+							"value": "Тестирование",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "Очень сложная программа45678901234567890123456789012345678901234567890123456789012345678901234567890",
+							"type": "text"
+						},
+						{
+							"key": "content",
+							"value": "Надеюсь я справлюсь",
+							"type": "text"
+						},
+						{
+							"key": "isDraft",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "delayPublishTo",
+							"value": "2023-09-07",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://test-stand.gb.ru/gateway/posts",
+					"protocol": "https",
+					"host": [
+						"test-stand",
+						"gb",
+						"ru"
+					],
+					"path": [
+						"gateway",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MaxContent",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "new image",
+							"type": "file",
+							"src": "/C:/Users/Lenovo/Desktop/картинки/2e0f8f11c5550bd696bc7ac07104bbea.jpeg"
+						},
+						{
+							"key": "title",
+							"value": "Тестирование",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "Очень сложная программа",
+							"type": "text"
+						},
+						{
+							"key": "content",
+							"value": "Надеюсь я справлюсь012345678901234567890123456789012345678901234567890123456789012345678901234567890Надеюсь я справлюсь012345678901234567890123456789012345678901234567890123456789012345678901234567890Надеюсь я справлюсь012345678901234567890123456789012345678901234567890123456789012345678901234567890Надеюсь я справлюсь012345678901234567890123456789012345678901234567890123456789012345678901234567890Надеюсь я справлюсь012345678901234567890123456789012345678901234567890123456789012345678901234567890Надеюсь я справлюсь012345678901234567890123456789012345678901234567890123456789012345678901234567890Надеюсь я справлюсь012345678901234567890123456789012345678901234567890123456789012345678901234567890Надеюсь я справлюсь012345678901234567890123456789012345678901234567890123456789012345678901234567890Надеюсь я справлюсь012345678901234567890123456789012345678901234567890123456789012345678901234567890Надеюсь я справлюсь012345678901234567890123456789012345678901234567890123456789012345678901234567890",
+							"type": "text"
+						},
+						{
+							"key": "isDraft",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "delayPublishTo",
+							"value": "2023-09-07",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://test-stand.gb.ru/gateway/posts",
+					"protocol": "https",
+					"host": [
+						"test-stand",
+						"gb",
+						"ru"
+					],
+					"path": [
+						"gateway",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OnDraft",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "new image",
+							"type": "file",
+							"src": "/C:/Users/Lenovo/Desktop/картинки/2e0f8f11c5550bd696bc7ac07104bbea.jpeg"
+						},
+						{
+							"key": "title",
+							"value": "Тестирование",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "Очень сложная программа",
+							"type": "text"
+						},
+						{
+							"key": "content",
+							"value": "Надеюсь я справлюсь",
+							"type": "text"
+						},
+						{
+							"key": "isDraft",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "delayPublishTo",
+							"value": "2023-09-07",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://test-stand.gb.ru/gateway/posts",
+					"protocol": "https",
+					"host": [
+						"test-stand",
+						"gb",
+						"ru"
+					],
+					"path": [
+						"gateway",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OffDraft",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "new image",
+							"type": "file",
+							"src": "/C:/Users/Lenovo/Desktop/картинки/2e0f8f11c5550bd696bc7ac07104bbea.jpeg"
+						},
+						{
+							"key": "title",
+							"value": "Тестирование",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "Очень сложная программа",
+							"type": "text"
+						},
+						{
+							"key": "content",
+							"value": "Надеюсь я справлюсь",
+							"type": "text"
+						},
+						{
+							"key": "isDraft",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "delayPublishTo",
+							"value": "2023-09-07",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://test-stand.gb.ru/gateway/posts",
+					"protocol": "https",
+					"host": [
+						"test-stand",
+						"gb",
+						"ru"
+					],
+					"path": [
+						"gateway",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DelayPostToValid",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "new image",
+							"type": "file",
+							"src": "/C:/Users/Lenovo/Desktop/картинки/2e0f8f11c5550bd696bc7ac07104bbea.jpeg"
+						},
+						{
+							"key": "title",
+							"value": "Тестирование",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "Очень сложная программа",
+							"type": "text"
+						},
+						{
+							"key": "content",
+							"value": "Надеюсь я справлюсь",
+							"type": "text"
+						},
+						{
+							"key": "isDraft",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "delayPublishTo",
+							"value": "2023-09-07",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://test-stand.gb.ru/gateway/posts",
+					"protocol": "https",
+					"host": [
+						"test-stand",
+						"gb",
+						"ru"
+					],
+					"path": [
+						"gateway",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DelayPostToNotValid",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "new image",
+							"type": "file",
+							"src": "/C:/Users/Lenovo/Desktop/картинки/2e0f8f11c5550bd696bc7ac07104bbea.jpeg"
+						},
+						{
+							"key": "title",
+							"value": "Тестирование",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "Очень сложная программа",
+							"type": "text"
+						},
+						{
+							"key": "content",
+							"value": "Надеюсь я справлюсь",
+							"type": "text"
+						},
+						{
+							"key": "isDraft",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "delayPublishTo",
+							"value": "2023-09-03",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://test-stand.gb.ru/gateway/posts",
+					"protocol": "https",
+					"host": [
+						"test-stand",
+						"gb",
+						"ru"
+					],
+					"path": [
+						"gateway",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ImageValidFormat",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "new image",
+							"type": "file",
+							"src": "/C:/Users/Lenovo/Desktop/картинки/2e0f8f11c5550bd696bc7ac07104bbea.jpeg"
+						},
+						{
+							"key": "title",
+							"value": "Тестирование",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "Очень сложная программа",
+							"type": "text"
+						},
+						{
+							"key": "content",
+							"value": "Надеюсь я справлюсь",
+							"type": "text"
+						},
+						{
+							"key": "isDraft",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "delayPublishTo",
+							"value": "2023-09-07",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://test-stand.gb.ru/gateway/posts",
+					"protocol": "https",
+					"host": [
+						"test-stand",
+						"gb",
+						"ru"
+					],
+					"path": [
+						"gateway",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ImageNotValidFormat",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "new image",
+							"type": "file",
+							"src": "/C:/Users/Lenovo/Desktop/картинки/i (2).webp"
+						},
+						{
+							"key": "title",
+							"value": "Тестирование",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "Очень сложная программа",
+							"type": "text"
+						},
+						{
+							"key": "content",
+							"value": "Надеюсь я справлюсь",
+							"type": "text"
+						},
+						{
+							"key": "isDraft",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "delayPublishTo",
+							"value": "2023-09-07",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://test-stand.gb.ru/gateway/posts",
+					"protocol": "https",
+					"host": [
+						"test-stand",
+						"gb",
+						"ru"
+					],
+					"path": [
+						"gateway",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ImageSizeValid",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "new image",
+							"type": "file",
+							"src": "/C:/Users/Lenovo/Desktop/картинки/2e0f8f11c5550bd696bc7ac07104bbea.jpeg"
+						},
+						{
+							"key": "title",
+							"value": "Тестирование",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "Очень сложная программа",
+							"type": "text"
+						},
+						{
+							"key": "content",
+							"value": "Надеюсь я справлюсь",
+							"type": "text"
+						},
+						{
+							"key": "isDraft",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "delayPublishTo",
+							"value": "2023-09-07",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://test-stand.gb.ru/gateway/posts",
+					"protocol": "https",
+					"host": [
+						"test-stand",
+						"gb",
+						"ru"
+					],
+					"path": [
+						"gateway",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ImageSizeNotValid",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "new image",
+							"type": "file",
+							"src": "/C:/Users/Lenovo/Desktop/картинки/174680-voda-sneg-chashka-posuda-zhidkiy-7680x4320.jpg"
+						},
+						{
+							"key": "title",
+							"value": "Тестирование",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "Очень сложная программа",
+							"type": "text"
+						},
+						{
+							"key": "content",
+							"value": "Надеюсь я справлюсь",
+							"type": "text"
+						},
+						{
+							"key": "isDraft",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "delayPublishTo",
+							"value": "2023-09-07",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://test-stand.gb.ru/gateway/posts",
+					"protocol": "https",
+					"host": [
+						"test-stand",
+						"gb",
+						"ru"
+					],
+					"path": [
+						"gateway",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Drug&Drop",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "new image",
+							"type": "file",
+							"src": []
+						},
+						{
+							"key": "title",
+							"value": "Тестирование",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "Очень сложная программа",
+							"type": "text"
+						},
+						{
+							"key": "content",
+							"value": "Надеюсь я справлюсь",
+							"type": "text"
+						},
+						{
+							"key": "isDraft",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "delayPublishTo",
+							"value": "2023-09-07",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://test-stand.gb.ru/gateway/posts",
+					"protocol": "https",
+					"host": [
+						"test-stand",
+						"gb",
+						"ru"
+					],
+					"path": [
+						"gateway",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
